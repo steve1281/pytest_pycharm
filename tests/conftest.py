@@ -20,9 +20,9 @@ def guardians() -> Tuple[Guardian, ...]:
 
 
 @pytest.fixture()
-def guardians_file(dir):
+def guardians_file(temp_dir):
     data = "Mary,Jones\nJoanie,Johnson\nJerry,Johnson"
-    return dir.write("test.csv", data.encode())
+    return temp_dir.write("test.csv", data.encode())
 
 
 @pytest.fixture()
@@ -33,6 +33,6 @@ def guardians_list() -> List[Guardian]:
 
 
 @pytest.fixture()
-def dir():
+def temp_dir():
     with TempDirectory() as d:
         yield d
