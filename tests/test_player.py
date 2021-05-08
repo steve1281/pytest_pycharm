@@ -35,3 +35,7 @@ def test_primary_guardian(player_one, guardians):
 def test_no_primary_guardian(player_one):
     assert None is player_one.primary_guardian
 
+
+def test_read_guardians_from_csv(player_one, guardians_list, guardians_file):
+    player_one.load_guardian_file(guardians_file)
+    assert player_one.guardians == guardians_list
