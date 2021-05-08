@@ -1,3 +1,4 @@
+import csv
 from dataclasses import dataclass, field
 from typing import List, Iterable, Optional
 
@@ -18,5 +19,12 @@ class Player:
     @property
     def primary_guardian(self) -> Optional[Guardian]:
         return self.guardians[0] if self.guardians else None
+
+    def load_guardian_file(self, path):
+        with open(path,newline='') as csvfile:
+            data = csv.reader(csvfile)
+            for row in data:
+                self.guardians.append(Guardian(*row))
+
 
 
