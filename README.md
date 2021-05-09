@@ -70,6 +70,7 @@ steve@steve-VirtualBox:~/projects/pytest_pycharm$ tree -I virtualenv
 ```
 added code to read guardians from a csv file.
 added code to write guardians to a csv file.
+added code that will load a csv file base don the player name (and tests with a method mock)
 ```
 
 
