@@ -17,6 +17,8 @@ This is just my code from his tutorial.
 ```
 pyenv local 3.9.2
 virtualenv virtualenv
+. ./virtualenv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## install pycharm (ubuntu 20)
