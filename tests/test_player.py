@@ -1,7 +1,5 @@
-import pytest
-
+import laxleague.player
 from laxleague.player import Player
-
 
 def test_construction(player_one):
     assert 'Jones' == player_one.last_name
@@ -50,3 +48,11 @@ def test_write_guardians_to_csv(player_one, guardians, temp_dir):
     p = Player("Test", "Name")
     p.load_guardian_file(path)
     assert p.guardians == player_one.guardians
+
+
+def test_load_player(player_one, mocker):
+    mocked = mocker.patch('laxleague.player.Player.load_guardian_file',
+                          return_value=None)
+    player_one.load_default()
+    expected = player_one.first_name + "_" + player_one.last_name+".csv"
+    mocked.assert_called_with(expected)

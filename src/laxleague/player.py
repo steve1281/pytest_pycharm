@@ -33,4 +33,7 @@ class Player:
             for g in self.guardians:
                 writer.writerow([g.first_name, g.last_name])
 
+    def load_default(self):
+        path = self.first_name+"_"+self.last_name+".csv"
+        self.load_guardian_file(path)
 

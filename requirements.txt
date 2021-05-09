@@ -1,10 +1,10 @@
 attrs==21.2.0
 iniconfig==1.1.1
--e git+https://github.com/steve1281/pytest_pycharm.git@ee430941ec14c9c3f6fa203660cba4a02091cec6#egg=laxleague
 packaging==20.9
 pluggy==0.13.1
 py==1.10.0
 pyparsing==2.4.7
 pytest==6.2.4
+pytest-mock==3.6.1
 testfixtures==6.17.1
 toml==0.10.2
